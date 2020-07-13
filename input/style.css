@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   height: 60vh;
   display: flex;
@@ -11,6 +17,7 @@ body {
   width: 50%;
   position: relative;
   height: 50px;
+  overflow: hidden;
 }
 
 .form input {
@@ -20,6 +27,7 @@ body {
   /* add padding to push text down */
   padding-top: 20px;
   border: none;
+  outline: none;
 }
 
 .form label {
@@ -51,6 +59,14 @@ body {
   transition: all 0.3s ease;
 }
 
-.form input:focus + .label-name {
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name {
   transform: translateY(-150%);
+  font-size: 14px;
+  color: #5fa8d3;
+}
+.form input:focus + .label-name::after,
+.form input:valid + .label-name::after {
+  transform: translateX(0%);
+  transition: transform 0.3s ease;
 }
