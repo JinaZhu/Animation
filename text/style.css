@@ -25,7 +25,7 @@ span {
 
 span.fade {
   opacity: 1;
-  color: blue; 
+  color: #997782; 
   transform: translateY(0px);
 }
 
