@@ -60,8 +60,8 @@ span.fade {
 }
 
 #logo path:nth-child(2) {
-  stroke-dasharray: 313;
-  stroke-dashoffset: 313;
+  stroke-dasharray: 315;
+  stroke-dashoffset: 320;
   animation: line-anim 2s ease forwards;
 }
 #logo path:nth-child(3) {

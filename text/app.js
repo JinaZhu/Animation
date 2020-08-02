@@ -40,6 +40,7 @@ const logo = document.querySelectorAll("#logo path");
 
 console.log(logo);
 
+// use to find the length of the letters
 for (let i = 0; i < logo.length; i++) {
   console.log(`letter ${i} is ${logo[i].getTotalLength()}`);
 }
