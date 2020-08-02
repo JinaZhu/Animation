@@ -1,10 +1,11 @@
 import React from "react";
+import { CheckboxStyle } from "./styled";
 
 const Checkbox = ({ name, value }) => {
   return (
     <span>
-      <input type="checkbox" name={name} value={value} />
-      <label for={name}>{value}</label>
+      <CheckboxStyle type="checkbox" name={name} value={value} />
+      <label htmlFor={name}>{value}</label>
     </span>
   );
 };
