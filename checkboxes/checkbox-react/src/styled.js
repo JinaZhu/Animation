@@ -19,4 +19,14 @@ export const CheckboxStyle = styled.input`
   outline: none;
   transition-duration: 0.3s;
   cursor: pointer;
+
+  &:before {
+    content: "\2713";
+    display: block;
+    text-align: center;
+    color: #41b883;
+    position: absolute;
+    left: 0.7rem;
+    top: 0.2rem;
+  }
 `;
