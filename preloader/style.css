@@ -26,14 +26,20 @@
 .lily1 {
   top: 25%;
   transform: translate(100%, -25%);
+  animation: clouds 8s ease infinite;
+  height: 275px;
 }
 .lily2 {
   top: 50%;
   transform: translate(100%, -55%);
+  animation: clouds 8s ease infinite 2s;
+  height: 275px;
 }
 .lily3 {
   top: 75%;
   transform: translate(100%, -75%);
+  animation: clouds 8s ease infinite 4s;
+  height: 275px;
 }
 
 section img {
@@ -59,6 +65,15 @@ section img {
     transform: translateY(0px);
   }
   to {
-    transform: translateY(50px);
+    transform: translateY(75px);
+  }
+}
+
+@keyframes clouds {
+  from {
+    right: 0%;
+  }
+  to {
+    right: 150%;
   }
 }
