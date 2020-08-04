@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { CheckboxContainer } from "./styled";
-import Checkbox from "./checkbox";
+import Checkbox from "./Checkbox";
 
 const checkboxes = [
   { name: "3d", value: "Scale 3D Sensor Fusion" },
@@ -11,19 +11,22 @@ const checkboxes = [
   { name: "text", value: "Scale Text" },
 ];
 
-// POST about/scale-products
-['scale 3d sensor fusion', 'scale video', 'scale document']
-
-// POST contracts/agreements
-{
-  binding: true, 
-  fullDiscount: true, 
-  arbitration: false
-}
-
 function App() {
-  const [checkboxes, setCheckboxes] = useState([]);
+  const [checkboxValues, setCheckboxValues] = useState([]);
   const [text, setText] = useState("");
+  console.log("checkboxValues", checkboxValues);
+
+  const updateCheckboxValues = (value) => {
+    // Make shallow copy of checboxValues state
+    const newCheckboxValues = [...checkboxValues];
+    if (newCheckboxValues.includes(value)) {
+      const valueIndex = newCheckboxValues.indexOf(value);
+      newCheckboxValues.splice(valueIndex, 1);
+    } else {
+      newCheckboxValues.push(value);
+    }
+    setCheckboxValues(newCheckboxValues);
+  };
 
   const displayCheckboxes = checkboxes.map((checkbox, key) => {
     return (
@@ -31,7 +34,7 @@ function App() {
         key={key}
         name={checkbox.name}
         value={checkbox.value}
-        setCheckboxes={setCheckboxes}
+        onChange={updateCheckboxValues}
       />
     );
   });
