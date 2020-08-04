@@ -1,3 +1,11 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #283342;
+}
+
 .container {
   width: 100%;
   height: 100vh;
@@ -14,6 +22,7 @@
 .card {
   width: 100%;
   height: 100%;
+  position: relative;
   transition: transform 1s ease-in-out;
   transform-style: preserve-3d;
 }
@@ -35,14 +44,15 @@
 }
 
 .card .front {
-  background-color: palevioletred;
-  color: white;
-  text-align: center;
+  backface-visibility: hidden;
 }
 
 .card .back {
-  background: peru;
-  color: white;
   transform: rotateY(-180deg);
-  text-align: center;
+  backface-visibility: hidden;
+}
+
+img {
+  width: 100%;
+  height: 100%;
 }
