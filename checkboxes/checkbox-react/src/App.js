@@ -12,20 +12,34 @@ const checkboxes = [
 ];
 
 function App() {
-  const [checkboxValues, setCheckboxValues] = useState([]);
-  const [text, setText] = useState("");
-  console.log("checkboxValues", checkboxValues);
+  const [formValues, setFormValues] = useState({
+    fname: "",
+    lname: "",
+    interests: [],
+  });
 
   const updateCheckboxValues = (value) => {
     // Make shallow copy of checboxValues state
-    const newCheckboxValues = [...checkboxValues];
+    const newCheckboxValues = [...formValues.interests];
     if (newCheckboxValues.includes(value)) {
       const valueIndex = newCheckboxValues.indexOf(value);
       newCheckboxValues.splice(valueIndex, 1);
     } else {
       newCheckboxValues.push(value);
     }
-    setCheckboxValues(newCheckboxValues);
+    handleChange("interests", newCheckboxValues);
+  };
+
+  const handleChange = (formField, formValue) => {
+    // const updatedFormValues = { ...formValues };
+    // updatedFormValues[formField] = formValue;
+
+    const updatedFormValues = {
+      ...formValues,
+      [formField]: formValue,
+    };
+
+    setFormValues(updatedFormValues);
   };
 
   const displayCheckboxes = checkboxes.map((checkbox, key) => {
@@ -50,10 +64,23 @@ function App() {
       <p>Interested in</p>
       <form>
         <CheckboxContainer>{displayCheckboxes}</CheckboxContainer>
-        <input type="text" onChange={(e) => setText(e.target.value)} />
+        <label htmlFor="first-name">First Name:</label>
+        <input
+          type="text"
+          name="first-name"
+          onChange={(e) => handleChange("fname", e.target.value)}
+        />
+        <br />
+        <label htmlFor="last-name">Last Name:</label>
+        <input
+          type="text"
+          name="last-name"
+          onChange={(e) => handleChange("lname", e.target.value)}
+        />
         <br />
         <button onClick={handleSubmit}>Submit</button>
       </form>
+      <code>{JSON.stringify(formValues)}</code>
     </div>
   );
 }
