@@ -31,9 +31,6 @@ function App() {
   };
 
   const handleChange = (formField, formValue) => {
-    // const updatedFormValues = { ...formValues };
-    // updatedFormValues[formField] = formValue;
-
     const updatedFormValues = {
       ...formValues,
       [formField]: formValue,
@@ -55,7 +52,6 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     console.log(e);
   };
 
