@@ -12,3 +12,35 @@ header {
   background-size: cover;
   color: white;
 }
+
+.about {
+  height: 300vh;
+  display: flex;
+}
+
+.about-title {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.about-pages {
+  width: 50%;
+}
+
+.about-pages div {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.about-pages div p {
+  width: 80%;
+  font-size: 18px;
+  line-height: 30px;
+}
