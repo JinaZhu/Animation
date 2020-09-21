@@ -3,6 +3,7 @@ const carouselImages = document.querySelectorAll(".carousel-slide img");
 const prevBtn = document.querySelector("#prevBtn");
 const nextBtn = document.querySelector("#nextBtn");
 
+//keep track of the current slide
 let counter = 1;
 // get the size of the image's width
 const size = carouselImages[0].clientWidth;
@@ -11,10 +12,11 @@ carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
 
 //button listeners
 nextBtn.addEventListener("click", () => {
+  // return the first image, for fast clicking
   if (counter >= carouselImages.length - 1) return;
   carouselSlide.style.transition = "transform 0.4s ease-in-out";
-  console.log("carouselSlide.style", carouselSlide.style.transition);
   counter++;
+  // increase the slide position width to be where the current item is with the width of each previous image
   carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
 });
 
@@ -27,7 +29,7 @@ prevBtn.addEventListener("click", () => {
 
 // when slide reach end
 carouselSlide.addEventListener("transitionend", () => {
-  //   console.log("hello");
+  // when the carousel reach lastClone, loop it back to the end vise versa with firstclone
   if (carouselImages[counter].id === "lastClone") {
     carouselSlide.style.transition = "none";
     counter = carouselImages.length - 2;
