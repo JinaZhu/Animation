@@ -8,6 +8,7 @@ function smoothScroll(target, duration) {
   const distance = targetPosition - startingPosition;
   var startTime = null;
 
+  // currentime is a counter that keep track of the time when the page load
   function animation(currentTime) {
     if (startTime === null) startTime = currentTime;
     const timeElapsed = currentTime - startTime;
@@ -27,6 +28,7 @@ function smoothScroll(target, duration) {
   requestAnimationFrame(animation);
 }
 
+// event listeners
 const section1 = document.querySelector(".section1");
 section1.addEventListener("click", function () {
   smoothScroll(".section2", 1000);
