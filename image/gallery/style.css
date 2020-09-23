@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gallery-highlight {
+  height: 80%;
+}
+
+section {
+  display: flex;
+  height: 100vh;
+}
+
+.dress-gallery {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dress-description {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e2d2c0;
+}
+
+.dress-preview {
+  display: flex;
+  width: 70%;
+  border: 2px solid #e2d2c0;
+}
+
+.dress-preview img {
+  height: 100px;
+  flex-grow: 1;
+  opacity: 0.6;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+img.dress-active {
+  opacity: 1;
+}
