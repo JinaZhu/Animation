@@ -30,6 +30,19 @@ section {
   background-color: #e2d2c0;
 }
 
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 7%;
+  text-align: center;
+}
+
+.info h1 {
+  margin-bottom: 10px;
+}
+
 .dress-preview {
   display: flex;
   width: 70%;
