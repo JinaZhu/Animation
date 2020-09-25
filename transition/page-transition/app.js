@@ -13,11 +13,14 @@ var FadeTransition = Barba.BaseTransition.extend({
       this.fadeIn.bind(this)
     );
   },
-
+  // effect for fading out
   fadeOut: function () {},
-
+  // effect for fading in
   fadeIn: function () {
+    // take the newcontainer and add a class of slide-in
     this.newContainer.classList.add("slide-in");
+    // add an event listener to listen for when the animation end and remove the slide in class
+    // without, it will animation back to the original page
     this.newContainer.addEventListener("animationend", () => {
       this.newContainer.classList.remove("slide-in");
       this.done();
