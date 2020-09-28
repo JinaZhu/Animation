@@ -27,18 +27,28 @@ header img {
 
 .intro-content {
   display: flex;
+  justify-content: space-evenly;
   margin: 5%;
 }
 
 .intro-content img {
-  width: 700px;
+  width: 50%;
+  object-fit: cover;
 }
 
 .intro-text {
-  margin-right: 5rem;
+  width: 30%;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.5s all ease-in-out;
+}
+
+.intro-appear {
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 .intro-text h2 {
