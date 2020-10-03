@@ -46,7 +46,49 @@ a {
   font-size: 2rem;
 }
 
-.img {
+img {
   width: 100%;
-  height: 200px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.card {
+  display: grid;
+  /* just want two columns */
+  grid-template-columns: repeat(2, 1fr);
+  /* spacing between objects */
+  grid-gap: 2rem;
+  background-color: lightgray;
+  margin-bottom: 2rem;
+}
+
+.card h3 {
+  margin-bottom: 2rem;
+}
+/* direct div of card */
+.card > div {
+  padding: 2rem;
+}
+
+.card:nth-child(even) img {
+  order: 2;
+}
+
+.btn {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 0.8rem 1.8rem;
+  margin: 2rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 930px) {
+  .card {
+    display: block;
+  }
 }
