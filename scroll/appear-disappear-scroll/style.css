@@ -7,7 +7,7 @@
 body {
   font-family: "Oswald", sans-serif;
   font-size: 1.3rem;
-  background: #f9f9f9;
+  background: #f8f3f0;
 }
 
 a {
@@ -39,7 +39,7 @@ a {
 }
 
 .main-header h1 span {
-  color: #b50d10;
+  color: #919f89;
 }
 
 .main-header p {
@@ -58,7 +58,7 @@ img {
   grid-template-columns: repeat(2, 1fr);
   /* spacing between objects */
   grid-gap: 2rem;
-  background-color: lightgray;
+  background-color: #919f89;
   margin-bottom: 2rem;
 }
 
