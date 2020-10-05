@@ -11,23 +11,27 @@ body {
 .container {
   max-height: 100vh;
   overflow: scroll;
+  scroll-snap-type: x mandatory;
+  display: flex;
 }
 
 .item {
-  border-bottom: 10px solid white;
+  border: 10px solid white;
   color: white;
-  background-color: #f107ba;
+  background-color: #462c2f;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   font-size: 6vw;
+  scroll-snap-align: start;
+  min-width: 100vw;
 }
 
 .item:nth-child(odd) {
-  background-color: aquamarine;
+  background-color: #713c46;
 }
 
-.item:last-child {
+/* .item:last-child {
   border: none;
-}
+} */
