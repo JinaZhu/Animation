@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ebc1a7;
+  font-family: "Abel", sans-serif;
+}
+
+a,
+button {
+  font-family: "Abel", sans-serif;
+}
+
+.dropdown {
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: center;
+}
+
+.product .project {
+  position: relative;
+}
+
+.project ul,
+.product ul {
+  position: absolute;
+  margin-top: 10px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  border-radius: 5px;
+  background-color: white;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: all 0.4s ease;
+}
+
+.project a,
+.product a {
+  color: black;
+  text-decoration: none;
+}
+
+.product li,
+.project li {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product li:hover,
+.project li:hover {
+  background-color: #9d513d;
+}
+
+.dropdown button,
+.home {
+  background: none;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* when you click on the button, effect the elements below it */
+.project button:focus + ul,
+.product button:focus + ul {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0px);
+}
