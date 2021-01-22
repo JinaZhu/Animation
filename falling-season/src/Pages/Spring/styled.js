@@ -29,12 +29,12 @@ const fall = keyframes`
     }
     80% {
         top: 100%;
-        transform: translateX(1000px) rotate(180deg);
+        transform: translateX(1100px) rotate(180deg);
         filter: blur(0.7px);
     }
     100% {
         top: 70%; 
-        transform: translateX(1500px) rotate(225deg);
+        transform: translateX(1700px) rotate(225deg);
         filter: blur(0.5px);
     }
 `;
@@ -54,25 +54,9 @@ export const FlowerContainer = styled.div`
   height: 100%;
 `;
 
-export const FlowerContainer2 = styled.div`
-  transform: scale(1.5);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  filter: blur(1px);
-`;
-
-export const FlowerContainer3 = styled.div`
-  transform: scale(0.8) rotateX(-180deg);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  filter: blur(3px);
-`;
-
 export const FlowerImg = styled.img`
   position: absolute;
   left: ${(props) => props.left};
-  animation: ${fall} ${(props) => props.duration || "15s"} linear infinite;
-  animation-delay: ${(props) => props.delay || "-7s"};
+  animation: ${fall} ${(props) => props.duration} linear infinite;
+  animation-delay: ${(props) => props.delay};
 `;

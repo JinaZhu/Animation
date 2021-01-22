@@ -9,14 +9,13 @@ import flower5 from "../../images/flower_5.png";
 import flower6 from "../../images/flower_6.png";
 
 const lefts = [
-  "-24",
-  "-21",
-  "-18",
-  "-15",
-  "-12",
-  "-9",
-  "-6",
-  "-3",
+  "-21%",
+  "-18%",
+  "-15%",
+  "-12%",
+  "-9%",
+  "-6%",
+  "-3%",
   "0%",
   "3%",
   "6%",
@@ -46,7 +45,7 @@ const Spring = () => {
   return (
     <SpringContainer>
       <FlowerContainer>
-        {Array(...Array(50)).map((_, i) => {
+        {Array(...Array(70)).map((_, i) => {
           const randomLeft = lefts[Math.floor(Math.random() * lefts.length)];
           const randomDuration =
             durations[Math.floor(Math.random() * durations.length)];

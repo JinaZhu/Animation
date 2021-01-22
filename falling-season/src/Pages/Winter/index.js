@@ -12,187 +12,56 @@ import snowflake1 from "../../images/snowflake_1.png";
 import snowflake2 from "../../images/snowflake_2.png";
 import snowflake3 from "../../images/snowflake_3.png";
 
+const lefts = [
+  "0%",
+  "10%",
+  "20%",
+  "30%",
+  "40%",
+  "50%",
+  "60%",
+  "70%",
+  "80%",
+  "90%",
+  "100%",
+];
+
+const durations = ["10s", "11s", "12s", "13s", "14s", "15s", "16s", "17s"];
+const delays = ["-10s", "-8s", "-6s", "-4s", "-2s", "0", "0", "0"];
+const snowflakes = [snowflake1, snowflake2, snowflake3];
+const sizes = [
+  ["25", "3px"],
+  ["35", "0px"],
+  ["50", "1px"],
+];
+
 const Winter = () => {
   return (
     <WinterContainer>
-      <Name>Jina Zhu</Name>
       <SnowflakeContainer>
-        <SnowflakeImg
-          left={"30%"}
-          src={snowflake1}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"50%"}
-          duration={"20s"}
-          src={snowflake2}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"70%"}
-          duration={"25s"}
-          delay={"-5s"}
-          src={snowflake3}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"0%"}
-          duration={"15s"}
-          src={snowflake1}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"85%"}
-          duration={"18s"}
-          delay={"-5s"}
-          src={snowflake2}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"0%"}
-          duration={"12s"}
-          delay={"-10s"}
-          src={snowflake3}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"15%"}
-          duration={"14s"}
-          src={snowflake1}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"60%"}
-          src={snowflake2}
-          alt="snowflake"
-          width="100"
-        />
+        {Array(...Array(50)).map((_, i) => {
+          const randomLeft = lefts[Math.floor(Math.random() * lefts.length)];
+          const randomDuration =
+            durations[Math.floor(Math.random() * durations.length)];
+          const randomDelay = delays[Math.floor(Math.random() * delays.length)];
+          const randomSnowflake =
+            snowflakes[Math.floor(Math.random() * snowflakes.length)];
+          const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
+          return (
+            <SnowflakeImg
+              key={i}
+              src={randomSnowflake}
+              left={randomLeft}
+              duration={randomDuration}
+              delay={randomDelay}
+              blur={randomSize[1]}
+              rotate={randomSize[2]}
+              alt="snowflake"
+              width={randomSize[0]}
+            />
+          );
+        })}
       </SnowflakeContainer>
-      <SnowflakeContainer2>
-        <SnowflakeImg
-          left={"30%"}
-          src={snowflake1}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"50%"}
-          duration={"20s"}
-          src={snowflake2}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"70%"}
-          duration={"25s"}
-          delay={"-5s"}
-          src={snowflake3}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"0%"}
-          duration={"15s"}
-          src={snowflake1}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"85%"}
-          duration={"18s"}
-          delay={"-5s"}
-          src={snowflake2}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"0%"}
-          duration={"12s"}
-          delay={"-10s"}
-          src={snowflake3}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"15%"}
-          duration={"14s"}
-          src={snowflake1}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"60%"}
-          src={snowflake2}
-          alt="snowflake"
-          width="100"
-        />
-      </SnowflakeContainer2>
-      <SnowflakeContainer3>
-        <SnowflakeImg
-          left={"30%"}
-          src={snowflake1}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"50%"}
-          duration={"20s"}
-          src={snowflake2}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"70%"}
-          duration={"25s"}
-          delay={"-5s"}
-          src={snowflake3}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"0%"}
-          duration={"15s"}
-          src={snowflake1}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"85%"}
-          duration={"18s"}
-          delay={"-5s"}
-          src={snowflake2}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"0%"}
-          duration={"12s"}
-          delay={"-10s"}
-          src={snowflake3}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"15%"}
-          duration={"14s"}
-          src={snowflake1}
-          alt="snowflake"
-          width="100"
-        />
-        <SnowflakeImg
-          left={"60%"}
-          src={snowflake2}
-          alt="snowflake"
-          width="100"
-        />
-      </SnowflakeContainer3>
     </WinterContainer>
   );
 };

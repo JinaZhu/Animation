@@ -60,8 +60,10 @@ export const SnowflakeContainer3 = styled.div`
 export const SnowflakeImg = styled.img`
   position: absolute;
   left: ${(props) => props.left};
-  animation: ${fall} ${(props) => props.duration || "15s"} linear infinite;
-  animation-delay: ${(props) => props.delay || "-7s"};
+  animation: ${fall} ${(props) => props.duration} linear infinite;
+  animation-delay: ${(props) => props.delay};
+  filter: blur(${(props) => props.blur});
+  transform: ${(props) => props.rotate};
 `;
 
 export const Name = styled.h1`
