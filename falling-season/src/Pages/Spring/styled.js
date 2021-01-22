@@ -4,26 +4,38 @@ const fall = keyframes`
     0% {
         opacity: 0;
         top: -10%;
-        transform: translateX(-50px) rotate(0deg);
+        transform:rotate(0deg);
     }
     10% {
         opacity: 1; 
+        transform: translateX(30px) rotate(25deg);
     }
     20% {
-        transform: translateX(-20px) rotate(45deg);
+        transform: translateX(100px) rotate(45deg);
+        filter: blur(0.2px);
     }
     40% {
-        transform: translateX(0px) rotate(90deg);
+        transform: translateX(300px) rotate(90deg);
+        filter: blur(0.5px);
     }
     60% {
-        transform: translateX(5px) rotate(135deg);
+        transform: translateX(700px) rotate(135deg);
+        filter: blur(0.7px);
+    }
+    70% {
+        top: 110%;
+        transform: translateX(1000px) rotate(180deg);
+        filter: blur(1px);
     }
     80% {
-        transform: translateX(15px) rotate(180deg);
+        top: 100%;
+        transform: translateX(1000px) rotate(180deg);
+        filter: blur(0.7px);
     }
     100% {
-        top: 110%; 
-        transform: translateX(30px) rotate(225deg);
+        top: 70%; 
+        transform: translateX(1500px) rotate(225deg);
+        filter: blur(0.5px);
     }
 `;
 
@@ -43,7 +55,7 @@ export const FlowerContainer = styled.div`
 `;
 
 export const FlowerContainer2 = styled.div`
-  transform: scale(1.5) rotateY(180deg);
+  transform: scale(1.5);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -51,7 +63,7 @@ export const FlowerContainer2 = styled.div`
 `;
 
 export const FlowerContainer3 = styled.div`
-  transform: scale(0.8) rotateX(180deg);
+  transform: scale(0.8) rotateX(-180deg);
   position: absolute;
   width: 100%;
   height: 100%;

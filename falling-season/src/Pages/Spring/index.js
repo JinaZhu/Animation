@@ -1,224 +1,70 @@
 import React from "react";
 
-import {
-  SpringContainer,
-  FlowerContainer,
-  FlowerImg,
-  FlowerContainer2,
-  FlowerContainer3,
-} from "./styled";
+import { SpringContainer, FlowerContainer, FlowerImg } from "./styled";
 import flower1 from "../../images/flower_1.png";
 import flower2 from "../../images/flower_2.png";
 import flower3 from "../../images/flower_3.png";
 import flower4 from "../../images/flower_4.png";
+import flower5 from "../../images/flower_5.png";
+import flower6 from "../../images/flower_6.png";
+
+const lefts = [
+  "-24",
+  "-21",
+  "-18",
+  "-15",
+  "-12",
+  "-9",
+  "-6",
+  "-3",
+  "0%",
+  "3%",
+  "6%",
+  "9%",
+  "12%",
+  "15%",
+  "18%",
+  "21%",
+  "25%",
+];
+const durations = ["10s", "11s", "12s", "13s", "14s", "15s", "16s", "17s"];
+const delays = ["-10s", "-8s", "-6s", "-4s", "-2s", "0", "0", "0"];
+const flowerTypes = [
+  [flower3, "25"],
+  [flower4, "25"],
+  [flower5, "25"],
+  [flower6, "25"],
+  [flower1, "50"],
+  [flower2, "50"],
+  [flower3, "25"],
+  [flower4, "25"],
+  [flower5, "25"],
+  [flower6, "25"],
+];
 
 const Spring = () => {
   return (
     <SpringContainer>
       <FlowerContainer>
-        <FlowerImg left={"0%"} src={flower1} alt="flower" width="70" />
-        <FlowerImg
-          duration={"9s"}
-          left={"30%"}
-          src={flower2}
-          alt="flower"
-          width="70"
-        />
-        <FlowerImg
-          duration={"17s"}
-          left={"50%"}
-          delay={"-10s"}
-          src={flower3}
-          alt="flower"
-          width="35"
-        />
-        <FlowerImg
-          duration={"13s"}
-          left={"70%"}
-          src={flower4}
-          delay={"-5s"}
-          alt="flower"
-          width="30"
-        />
-        <FlowerImg left={"95%"} src={flower1} alt="flower" width="70" />
-        <FlowerImg left={"85%"} src={flower2} alt="flower" width="70" />
-        <FlowerImg left={"0%"} src={flower3} alt="flower" width="35" />
-        <FlowerImg
-          duration={"11s"}
-          left={"60%"}
-          src={flower4}
-          alt="flower"
-          width="30"
-        />
-        <FlowerImg
-          duration={"10s"}
-          left={"95%%"}
-          src={flower3}
-          delay={"-5s"}
-          alt="flower"
-          width="35"
-        />
-        <FlowerImg left={"15%"} src={flower4} alt="flower" width="30" />
-        <FlowerImg
-          duration={"7s"}
-          left={"65%"}
-          src={flower3}
-          alt="flower"
-          width="35"
-        />
-        <FlowerImg
-          duration={"10s"}
-          left={"90%"}
-          delay={"-5s"}
-          src={flower4}
-          alt="flower"
-          width="30"
-        />
-        <FlowerImg left={"50%"} src={flower3} alt="flower" width="35" />
-        <FlowerImg
-          left={"35%"}
-          duration={"7s"}
-          src={flower4}
-          alt="flower"
-          width="30"
-        />
+        {Array(...Array(50)).map((_, i) => {
+          const randomLeft = lefts[Math.floor(Math.random() * lefts.length)];
+          const randomDuration =
+            durations[Math.floor(Math.random() * durations.length)];
+          const randomDelay = delays[Math.floor(Math.random() * delays.length)];
+          const randomFlowerType =
+            flowerTypes[Math.floor(Math.random() * flowerTypes.length)];
+          return (
+            <FlowerImg
+              src={randomFlowerType[0]}
+              left={randomLeft}
+              duration={randomDuration}
+              delay={randomDelay}
+              alt="flower"
+              width={randomFlowerType[1]}
+            />
+          );
+        })}
       </FlowerContainer>
-      <FlowerContainer2>
-        <FlowerImg left={"0%"} src={flower1} alt="flower" width="70" />
-        <FlowerImg
-          duration={"9s"}
-          left={"30%"}
-          src={flower2}
-          alt="flower"
-          width="70"
-        />
-        <FlowerImg
-          duration={"17s"}
-          left={"50%"}
-          delay={"-10s"}
-          src={flower3}
-          alt="flower"
-          width="35"
-        />
-        <FlowerImg
-          duration={"13s"}
-          left={"70%"}
-          src={flower4}
-          delay={"-5s"}
-          alt="flower"
-          width="30"
-        />
-        <FlowerImg left={"95%"} src={flower1} alt="flower" width="70" />
-        <FlowerImg left={"85%"} src={flower2} alt="flower" width="70" />
-        <FlowerImg left={"0%"} src={flower3} alt="flower" width="35" />
-        <FlowerImg
-          duration={"11s"}
-          left={"60%"}
-          src={flower4}
-          alt="flower"
-          width="30"
-        />
-        <FlowerImg
-          duration={"10s"}
-          left={"95%%"}
-          src={flower3}
-          delay={"-5s"}
-          alt="flower"
-          width="35"
-        />
-        <FlowerImg left={"15%"} src={flower4} alt="flower" width="30" />
-        <FlowerImg
-          duration={"7s"}
-          left={"65%"}
-          src={flower3}
-          alt="flower"
-          width="35"
-        />
-        <FlowerImg
-          duration={"10s"}
-          left={"90%"}
-          delay={"-5s"}
-          src={flower4}
-          alt="flower"
-          width="30"
-        />
-        <FlowerImg left={"50%"} src={flower3} alt="flower" width="35" />
-        <FlowerImg
-          left={"35%"}
-          duration={"7s"}
-          src={flower4}
-          alt="flower"
-          width="30"
-        />
-      </FlowerContainer2>
-      <FlowerContainer3>
-        <FlowerImg left={"0%"} src={flower1} alt="flower" width="70" />
-        <FlowerImg
-          duration={"9s"}
-          left={"30%"}
-          src={flower2}
-          alt="flower"
-          width="70"
-        />
-        <FlowerImg
-          duration={"17s"}
-          left={"50%"}
-          delay={"-10s"}
-          src={flower3}
-          alt="flower"
-          width="35"
-        />
-        <FlowerImg
-          duration={"13s"}
-          left={"70%"}
-          src={flower4}
-          delay={"-5s"}
-          alt="flower"
-          width="30"
-        />
-        <FlowerImg left={"95%"} src={flower1} alt="flower" width="70" />
-        <FlowerImg left={"85%"} src={flower2} alt="flower" width="70" />
-        <FlowerImg left={"0%"} src={flower3} alt="flower" width="35" />
-        <FlowerImg
-          duration={"11s"}
-          left={"60%"}
-          src={flower4}
-          alt="flower"
-          width="30"
-        />
-        <FlowerImg
-          duration={"10s"}
-          left={"95%%"}
-          src={flower3}
-          delay={"-5s"}
-          alt="flower"
-          width="35"
-        />
-        <FlowerImg left={"15%"} src={flower4} alt="flower" width="30" />
-        <FlowerImg
-          duration={"7s"}
-          left={"65%"}
-          src={flower3}
-          alt="flower"
-          width="35"
-        />
-        <FlowerImg
-          duration={"10s"}
-          left={"90%"}
-          delay={"-5s"}
-          src={flower4}
-          alt="flower"
-          width="30"
-        />
-        <FlowerImg left={"50%"} src={flower3} alt="flower" width="35" />
-        <FlowerImg
-          left={"35%"}
-          duration={"7s"}
-          src={flower4}
-          alt="flower"
-          width="30"
-        />
-      </FlowerContainer3>
     </SpringContainer>
   );
 };
