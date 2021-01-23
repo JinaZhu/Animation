@@ -39,7 +39,6 @@ const fall = keyframes`
     }
 `;
 
-//#f7dcdc;
 export const SpringContainer = styled.div`
   background-color: #f7dcdc;
   height: 100vh;

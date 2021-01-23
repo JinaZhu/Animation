@@ -57,15 +57,3 @@ export const SnowflakeImg = styled.img`
   filter: blur(${(props) => props.blur});
   transform: ${(props) => props.rotate};
 `;
-
-export const Name = styled.h1`
-  position: absolute;
-  transform: translateY(-50%);
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  color: white;
-  font-size: 8em;
-  margin: 0;
-  padding: 0;
-`;

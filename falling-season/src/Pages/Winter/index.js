@@ -4,9 +4,7 @@ import {
   WinterContainer,
   SnowflakeImg,
   SnowflakeForward,
-  SnowflakeContainer2,
   SnowflakeBackward,
-  Name,
 } from "./styled";
 import snowflake1 from "../../images/snowflake_1.png";
 import snowflake2 from "../../images/snowflake_2.png";
