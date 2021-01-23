@@ -34,48 +34,57 @@ const sizes = [
   ["50", "1px"],
 ];
 
+function getRandomizedStyle(styleType) {
+  return styleType[Math.floor(Math.random() * styleType.length)];
+}
+
+function randomizeStyles() {
+  const randomLeft = getRandomizedStyle(lefts);
+  const randomDuration = getRandomizedStyle(durations);
+  const randomDelay = getRandomizedStyle(delays);
+  const randomSnowflake = getRandomizedStyle(snowflakes);
+  const randomSize = getRandomizedStyle(sizes);
+
+  return {
+    randomLeft,
+    randomDuration,
+    randomDelay,
+    randomSnowflake,
+    randomSize,
+  };
+}
+
 const Winter = () => {
   return (
     <WinterContainer>
       <SnowflakeForward>
         {Array(...Array(40)).map((_, i) => {
-          const randomLeft = lefts[Math.floor(Math.random() * lefts.length)];
-          const randomDuration =
-            durations[Math.floor(Math.random() * durations.length)];
-          const randomDelay = delays[Math.floor(Math.random() * delays.length)];
-          const randomSnowflake =
-            snowflakes[Math.floor(Math.random() * snowflakes.length)];
-          const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
+          const styles = randomizeStyles();
           return (
             <SnowflakeImg
               key={i}
-              src={randomSnowflake}
-              left={randomLeft}
-              duration={randomDuration}
-              delay={randomDelay}
-              blur={randomSize[1]}
-              rotate={randomSize[2]}
+              src={styles.randomSnowflake}
+              left={styles.randomLeft}
+              duration={styles.randomDuration}
+              delay={styles.randomDelay}
+              blur={styles.randomSize[1]}
+              rotate={styles.randomSize[2]}
               alt="snowflake"
-              width={randomSize[0]}
+              width={styles.randomSize[0]}
             />
           );
         })}
       </SnowflakeForward>
       <SnowflakeBackward>
         {Array(...Array(25)).map((_, i) => {
-          const randomLeft = lefts[Math.floor(Math.random() * lefts.length)];
-          const randomDuration =
-            durations[Math.floor(Math.random() * durations.length)];
-          const randomDelay = delays[Math.floor(Math.random() * delays.length)];
-          const randomSnowflake =
-            snowflakes[Math.floor(Math.random() * snowflakes.length)];
+          const styles = randomizeStyles();
           return (
             <SnowflakeImg
               key={i}
-              src={randomSnowflake}
-              left={randomLeft}
-              duration={randomDuration}
-              delay={randomDelay}
+              src={styles.randomSnowflake}
+              left={styles.randomLeft}
+              duration={styles.randomDuration}
+              delay={styles.randomDelay}
               blur={"3px"}
               alt="snowflake"
               width="25"
