@@ -35,21 +35,13 @@ export const WinterContainer = styled.div`
   position: relative;
 `;
 
-export const SnowflakeContainer = styled.div`
+export const SnowflakeForward = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
 `;
 
-export const SnowflakeContainer2 = styled.div`
-  transform: scale(2) rotateY(180deg);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  filter: blur(1px);
-`;
-
-export const SnowflakeContainer3 = styled.div`
+export const SnowflakeBackward = styled.div`
   transform: scale(0.8) rotateX(180deg);
   position: absolute;
   width: 100%;
