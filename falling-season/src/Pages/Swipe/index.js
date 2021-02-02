@@ -1,20 +1,37 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.css";
+import Swiper from "react-id-swiper";
+
+import "swiper/css/swiper.css";
+import "../../index.css";
+
+import { Card } from "./styled";
 
 const Swipe = () => {
+  const params = {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+    loop: true,
+  };
   return (
-    <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      ...
+    <Swiper {...params}>
+      <Card>
+        <p>slide 1</p>
+      </Card>
+      <Card>
+        <p>slide 2</p>
+      </Card>
+      <Card>
+        <p>slide 3</p>
+      </Card>
     </Swiper>
   );
 };
