@@ -13,3 +13,10 @@ export const Card = styled.div`
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   background-image: none;
 `;
+
+export const SwiperContainer = styled.div`
+  margin: 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

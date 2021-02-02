@@ -4,7 +4,7 @@ import Swiper from "react-id-swiper";
 import "swiper/css/swiper.css";
 import "../../index.css";
 
-import { Card } from "./styled";
+import { Card, SwiperContainer } from "./styled";
 
 const Swipe = () => {
   const params = {
@@ -22,17 +22,19 @@ const Swipe = () => {
     loop: true,
   };
   return (
-    <Swiper {...params}>
-      <Card>
-        <p>slide 1</p>
-      </Card>
-      <Card>
-        <p>slide 2</p>
-      </Card>
-      <Card>
-        <p>slide 3</p>
-      </Card>
-    </Swiper>
+    <SwiperContainer>
+      <Swiper {...params}>
+        <Card>
+          <p>slide 1</p>
+        </Card>
+        <Card>
+          <p>slide 2</p>
+        </Card>
+        <Card>
+          <p>slide 3</p>
+        </Card>
+      </Swiper>
+    </SwiperContainer>
   );
 };
 
