@@ -37,3 +37,7 @@ const Swipe = () => {
 };
 
 export default Swipe;
+
+//notes:
+// npm install -s swiper@5.4.2 react-id-swiper
+// to remove card shadow, remove style from swiper.css
